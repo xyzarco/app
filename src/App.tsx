@@ -1,21 +1,18 @@
-import { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route, Navigate, useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { HashRouter, Routes, Route, Navigate, useParams, useNavigate, Outlet, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { Tabs } from './components/Tabs';
-import { SearchBar } from './components/SearchBar';
-import { AppList } from './components/AppList';
 import { BottomNav } from './components/BottomNav';
-import { WarningAlert } from './components/WarningAlert';
+import { Home } from './pages/Home';
+import { Certs } from './pages/Certs';
+import { Upload } from './pages/Upload';
 
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 
 function AppLayout() {
   const { lang } = useParams();
-  const { setLanguage } = useLanguage();
+  const { setLanguage, language } = useLanguage();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('All');
-  const [searchQuery, setSearchQuery] = useState('');
+  const location = useLocation();
 
   useEffect(() => {
     if (lang === 'id' || lang === 'en') {
@@ -27,13 +24,14 @@ function AppLayout() {
 
   return (
     <div className="min-h-screen bg-background text-white pb-20">
-      <div className="max-w-md mx-auto min-h-screen bg-background relative shadow-2xl shadow-black">
+      <div
+        key={language}
+        className="max-w-md mx-auto min-h-screen bg-background relative shadow-2xl shadow-black animate-fade-in"
+      >
         <Header />
-        <Hero />
-        <WarningAlert />
-        <Tabs activeTab={activeTab} onTabChange={setActiveTab} />
-        <SearchBar value={searchQuery} onChange={setSearchQuery} />
-        <AppList searchQuery={searchQuery} activeTab={activeTab} />
+        <div key={location.pathname} className="animate-slide-in">
+          <Outlet />
+        </div>
         <BottomNav />
       </div>
     </div>
@@ -49,7 +47,11 @@ function App() {
           <LanguageProvider>
             <AppLayout />
           </LanguageProvider>
-        } />
+        }>
+          <Route index element={<Home />} />
+          <Route path="certs" element={<Certs />} />
+          <Route path="upload" element={<Upload />} />
+        </Route>
       </Routes>
     </HashRouter>
   );

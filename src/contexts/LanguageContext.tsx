@@ -15,6 +15,13 @@ interface Translations {
     upload: string;
     alertMessage: string;
     alertLinkText: string;
+    certsTitle: string;
+    certsSubtitle: string;
+    uploadTitle: string;
+    uploadSubtitle: string;
+    importCert: string;
+    selectIPA: string;
+    comingSoon: string;
 }
 
 const translations: Record<Language, Translations> = {
@@ -30,7 +37,14 @@ const translations: Record<Language, Translations> = {
         certs: "Certs",
         upload: "Upload",
         alertMessage: "Beware of influencers selling free sideloading materials. If you have extra money, please buy a paid certificate ",
-        alertLinkText: "here"
+        alertLinkText: "here",
+        certsTitle: "Certificates",
+        certsSubtitle: "Manage your signing certificates here. You can import .p12 and .mobileprovision files to sign your apps.",
+        uploadTitle: "Sideload",
+        uploadSubtitle: "Upload your .ipa file here to sign and install it on your device. Make sure you have a valid certificate.",
+        importCert: "Import Cert",
+        selectIPA: "Select .ipa file",
+        comingSoon: "Coming Soon"
     },
     id: {
         heroTitle: "Aplikasi Signed",
@@ -44,7 +58,14 @@ const translations: Record<Language, Translations> = {
         certs: "Sertifikat",
         upload: "Unggah",
         alertMessage: "Hati hati terhadap influencer yang jualan bahan gratisan untuk sideload. Kalau kamu punya uang lebih, silahkan beli sertifikat berbayar ",
-        alertLinkText: "disini"
+        alertLinkText: "disini",
+        certsTitle: "Sertifikat",
+        certsSubtitle: "Kelola sertifikat signing kamu di sini. Kamu bisa mengimpor file .p12 dan .mobileprovision untuk menanda-tangani aplikasi.",
+        uploadTitle: "Sideload",
+        uploadSubtitle: "Unggah file .ipa kamu di sini untuk di-sign dan diinstal ke perangkatmu. Pastikan kamu memiliki sertifikat yang valid.",
+        importCert: "Impor Sertifikat",
+        selectIPA: "Pilih file .ipa",
+        comingSoon: "Segera Hadir"
     }
 };
 

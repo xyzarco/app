@@ -15,7 +15,7 @@ export const AppList = ({ searchQuery, activeTab }: AppListProps) => {
     const { t } = useLanguage();
     const apps = [
         {
-            name: 'eSign (iOS 11-26)',
+            name: 'eSign (iOS 11-16)',
             developer: 'Qingdao Rural Commercial Bank Co., Ltd',
             iconColor: 'bg-blue-500 shadow-blue-500/20',
             iconLabel: 'E-Sign',
@@ -29,14 +29,8 @@ export const AppList = ({ searchQuery, activeTab }: AppListProps) => {
             iconColor: 'bg-indigo-500 shadow-indigo-500/20',
             iconLabel: '',
             iconImage: featherIcon,
-            category: 'Other'
-        },
-        {
-            name: 'Scarlet',
-            developer: 'Qingdao Rural Commercial Bank Co., Ltd',
-            iconColor: 'bg-red-500 shadow-red-500/20',
-            iconLabel: 'S',
-            category: 'Other'
+            category: 'Other',
+            downloadUrl: 'itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/xyzarco/plist/refs/heads/main/featherqingdao.plist'
         },
         {
             name: 'TrollStore X',
@@ -44,7 +38,8 @@ export const AppList = ({ searchQuery, activeTab }: AppListProps) => {
             iconColor: 'bg-cyan-500 shadow-cyan-500/20',
             iconLabel: 'X',
             iconImage: trollstorexIcon,
-            category: 'Other'
+            category: 'Other',
+            downloadUrl: 'itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/xyzarco/plist/refs/heads/main/trollstorexqingdao.plist'
         },
         {
             name: 'KSign',
@@ -65,7 +60,7 @@ export const AppList = ({ searchQuery, activeTab }: AppListProps) => {
     });
 
     return (
-        <div className="px-6 md:px-8 space-y-3 pb-32">
+        <div className="px-6 md:px-8 space-y-3 pb-6">
             {filteredApps.length > 0 ? (
                 filteredApps.map((app, index) => (
                     <div
