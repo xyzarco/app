@@ -3,9 +3,9 @@
     "slug": "esign",
     "icon": "esign",
     "color": "#3b82f6",
-    "titleEn": "ESign Sideloading Guide",
-    "titleId": "Panduan Sideload ESign",
-    "descEn": "Learn how to sideload apps on iOS using ESign certificates",
-    "descId": "Pelajari cara sideload aplikasi iOS menggunakan sertifikat ESign"
+    "titleEn": "Esign Sideloading Guide",
+    "titleId": "Panduan Sideload Esign",
+    "descEn": "Learn how to sideload .ipa apps on iOS using Esign certificates",
+    "descId": "Pelajari cara sideload aplikasi .ipa menggunakan sertifikat Esign"
   }
 ]
