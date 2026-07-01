@@ -1,4 +1,4 @@
-# Tutorial Esign
+# <img src="../esign.png" class="markdown-title-icon" /> Tutorial Esign
 
 Esign adalah alat *on-device signing* (penandatanganan di perangkat) yang memungkinkan kamu untuk menginstal file `.ipa` (format aplikasi iOS) langsung dari iPhone atau iPad-mu tanpa memerlukan komputer.
 
